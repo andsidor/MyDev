@@ -3,5 +3,5 @@ from django.views import View
 
 class Index (View):
     def get(self, request):
-        return render(request, 'blogapp/index.html')
+        return render(request, 'blog/index.html')
     
