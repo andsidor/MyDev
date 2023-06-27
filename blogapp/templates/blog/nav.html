@@ -20,7 +20,19 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="#">Logowanie</a>
+
+          {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Sign/Wyloguj</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'login' %}">Sign in/Logowanie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'register' %}">Sign Up/Zalogowany</a>
+            </li>          
+          {% endif %}
         </ul>
       </div>
     </div>
